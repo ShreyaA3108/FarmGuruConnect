@@ -40,7 +40,8 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
     const firstName = document.getElementById('firstName').value;
     const lastName = document.getElementById('lastName').value;
     const phoneNo = document.getElementById('phoneNo').value;
-    const farmLocation = document.getElementById('farmLocation').value;
+    const expertise = document.getElementById('ExpertField').value;
+    const profAfEl = document.getElementById('ProfAffiliate').value;
     const dpFile = document.getElementById('dpUpload').files[0];
 
     try {
@@ -63,7 +64,8 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
             firstName: firstName,
             lastName: lastName,
             phoneNo: phoneNo,
-            farmLocation: farmLocation,
+            FieldOfExpert: expertise,
+            Affiliation: profAfEl,
             photoURL: dpURL,
             email: email
         };
