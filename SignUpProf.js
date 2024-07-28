@@ -1,42 +1,3 @@
-// import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCS343LplQMazSMZL6kh0Iqj7z9He5dPyc",
-//     authDomain: "farmguruconnect.firebaseapp.com",
-//     projectId: "farmguruconnect",
-//     storageBucket: "farmguruconnect.appspot.com",
-//     messagingSenderId: "302353836766",
-//     appId: "1:302353836766:web:066e603224b33ac258704f"
-//   };
-// // Initialize Firebase
-// const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-// const auth = getAuth();
-
-// const signUpFormEl = document.getElementById('signUpForm');
-
-// signUpFormEl.addEventListener('submit', function(event) {
-//     event.preventDefault();
-//     let email = document.getElementById('email').value;
-//     let password = document.getElementById('password').value;
-//     console.log(email);
-
-//     localStorage.setItem('userEmail', email);
-//     createUserWithEmailAndPassword(auth,email, password)
-//         .then((userCredential) => {
-//             // Signed up
-//             const user = userCredential.user;
-//             console.log('User signed up:', user);
-//         })
-//         .catch((error) => {
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             console.error('Error signing up:', errorCode, errorMessage);
-//         });
-// });
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-storage.js";
@@ -86,7 +47,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
         // Create user with email and password
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-
+        console.log(user);
         // Upload profile picture to Firebase Storage
         const storageRef = ref(storage, `profile_pictures/${user.uid}/${dpFile.name}`);
         await uploadBytes(storageRef, dpFile);
