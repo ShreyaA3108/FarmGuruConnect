@@ -50,7 +50,7 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
         const user = userCredential.user;
 
         // Upload profile picture to Firebase Storage
-        const storageRef = ref(storage, `profile_pictures/${user.uid}/${dpFile.name}`);
+        const storageRef = ref(storage, `profile_pictures/farmer/${user.uid}/${dpFile.name}`);
         await uploadBytes(storageRef, dpFile);
         const dpURL = await getDownloadURL(storageRef);
 
@@ -66,12 +66,13 @@ document.getElementById('signUpForm').addEventListener('submit', async (e) => {
             phoneNo: phoneNo,
             farmLocation: farmLocation,
             photoURL: dpURL,
-            email: email
+            email: email,
         };
-        const userDataRef = ref(storage, `user_data/${user.uid}/data.json`);
+        const userDataRef = ref(storage, `user_data/farmer/${user.uid}/data.json`);
         await uploadBytes(userDataRef, new Blob([JSON.stringify(userData)], { type: 'application/json' }));
 
         alert('Signup successful and profile picture uploaded!');
+        window.location.href = 'issueRaise.html';
     } catch (error) {
         alert(error.message);
     }
