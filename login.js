@@ -20,7 +20,7 @@ document.getElementById('LoginForm').addEventListener('submit',async function(ev
     let email = $('#email').val();
     let password = $('#password').val();
     console.log(email);
-
+    
     await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
