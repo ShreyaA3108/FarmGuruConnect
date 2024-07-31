@@ -28,7 +28,7 @@ document.getElementById('LoginForm').addEventListener('submit',async function(ev
             const user = userCredential.user;
             alert('Login successful!');
             console.log(user);
-            
+            window.open('issueRaise.html');
             // ...
         })
         .catch((error) => {
