@@ -29,15 +29,15 @@
             <img src="Pictures/weather.jpg" width="150%" class="mx-auto">
             <p>Hii!! Lets dive in to the weather update of </p>
             <div>
-                <h1>Loc : </h1>
+                <h1 id="loc">Loc : </h1>
                 <h1 id="temp">Temp : </h1> 
-                <h1>Humidity :</h1>
+                <h1 id="humus">Humidity :</h1>
             </div>
         </div>
 
         <script>
             function api(){
-                fetch("http://api.weatherapi.com/v1/current.json?key=2eabf49d85ac4e92ad4175839242707&q=Delhi")
+                fetch(`http://api.weatherapi.com/v1/current.json?key=2eabf49d85ac4e92ad4175839242707&q=india/${localStorage.getItem(location)}`)
                 .then(res=>res.json())
                 .then(data=>{
                     console.log(data.current.temp_c)
