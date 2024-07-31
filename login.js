@@ -19,7 +19,8 @@ document.getElementById('LoginForm').addEventListener('submit',async function(ev
     event.preventDefault(); 
     let email = $('#email').val();
     let password = $('#password').val();
-    console.log(email);
+    let location = $('#location').val();
+    localStorage.setItem("location", location);
     
     await signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -27,6 +28,7 @@ document.getElementById('LoginForm').addEventListener('submit',async function(ev
             const user = userCredential.user;
             alert('Login successful!');
             console.log(user);
+            
             // ...
         })
         .catch((error) => {
