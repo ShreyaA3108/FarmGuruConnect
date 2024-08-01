@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="weather.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Risque', cursive;
@@ -15,6 +17,16 @@
     </style>
 </head>
 <body class="flex justify-center items-center min-h-screen bg-gradient-to-r from-green-300 to-blue-300">
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+             <div>
+                <a href="issueRaise.html" class="nav_link"><i class="fa fa-home" style='font-size:24px'></i></a>
+                <!-- <a href="#" class="nav_link"><i class="fas fa-comment-alt" style='font-size:24px'></i></a> -->
+                <a href="weather.html" class="nav_link"><i class="fas fa-cloud-meatball" style='font-size:24px'></i></a>
+             </div> 
+        </nav>
+    </div>
+
     <div class="bg-white rounded-lg shadow-md p-8 max-w-md w-full">
         <header class="relative text-center text-white">
             <img src="Pictures/issue_raise.png" alt="Header Image" class="w-full rounded-lg">
